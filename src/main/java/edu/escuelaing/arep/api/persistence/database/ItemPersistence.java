@@ -1,14 +1,14 @@
-package edu.escuelaing.arep.api.services;
+package edu.escuelaing.arep.api.persistence.database;
 
 import java.util.ArrayList;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import edu.escuelaing.arep.api.model.Item;
 import edu.escuelaing.arep.api.persistence.exception.ItemException;
 
-@Service
-public interface ItemServices {
+@Repository
+public interface ItemPersistence {
 
     void addItem(Item item) throws ItemException;
 

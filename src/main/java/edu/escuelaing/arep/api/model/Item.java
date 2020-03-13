@@ -1,6 +1,8 @@
 package edu.escuelaing.arep.api.model;
 
 public class Item {
+
+    private int id;
     private String name;
     private int cantidad;
 
@@ -25,6 +27,20 @@ public class Item {
     }
 
     public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Item(int id, String name, int cantidad) {
+        this.id = id;
+        this.name = name;
         this.cantidad = cantidad;
     }
 
