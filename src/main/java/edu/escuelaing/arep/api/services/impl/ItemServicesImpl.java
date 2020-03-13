@@ -13,24 +13,24 @@ import edu.escuelaing.arep.api.services.ItemServices;
 @Service
 public class ItemServicesImpl implements ItemServices {
 
-    // @Autowired
-    // private ItemPersistence itemPersistence;
+    @Autowired
+    private ItemPersistence itemPersistence;
 
     @Override
     public void addItem(Item item) throws ItemException {
-        // itemPersistence.addItem(item);
+        itemPersistence.addItem(item);
     }
 
     @Override
     public ArrayList<Item> getItems() throws ItemException {
-        // return itemPersistence.getItems();
-        return null;
+        return itemPersistence.getItems();
+        // return null;
     }
 
     @Override
     public Item getItem(int id) throws ItemException {
-        // return itemPersistence.getItem(id);
-        return null;
+        return itemPersistence.getItem(id);
+        // return null;
     }
 
 }

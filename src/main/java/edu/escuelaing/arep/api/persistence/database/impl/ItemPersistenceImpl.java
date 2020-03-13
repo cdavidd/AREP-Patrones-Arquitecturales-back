@@ -14,12 +14,12 @@ import edu.escuelaing.arep.api.model.Item;
 import edu.escuelaing.arep.api.persistence.database.ItemPersistence;
 import edu.escuelaing.arep.api.persistence.exception.ItemException;
 
-//@Repository
+@Repository
 public class ItemPersistenceImpl implements ItemPersistence {
 
-    private static String urlDB = "jdbc:postgresql://ec2-184-72-235-80.compute-1.amazonaws.com:5432/dbtl4cgci93us8";
-    private static String usuarioDB = "kdhtqiwvrrmoth";
-    private static String passwordDB = "eb9eea3f28cda481450f86b6646fb25d67f71a628a003a0e223b989a95cabf70";
+    private static String urlDB = "jdbc:postgresql://database-2.c5szfzxzsbcy.us-east-1.rds.amazonaws.com:5432/arepDataBase";
+    private static String usuarioDB = "david";
+    private static String passwordDB = "123456789c";
     private static Connection connection = null;
 
     public ItemPersistenceImpl() {
@@ -30,8 +30,9 @@ public class ItemPersistenceImpl implements ItemPersistence {
     public void coneccion() {
         try {
             Class.forName("org.postgresql.Driver");
-            System.out.println("La conexion se realizo sin problemas!");
+
             connection = DriverManager.getConnection(urlDB, usuarioDB, passwordDB);
+            System.out.println("La conexion se realizo sin problemas!");
         } catch (ClassNotFoundException e) {
             System.out.println("Error al registrar el driver de PostgreSQL: " + e);
         } catch (SQLException e) {

@@ -33,7 +33,7 @@ public class ItemApiController {
         }
     }
 
-    @GetMapping("/items")
+    @GetMapping
     public ResponseEntity<?> getItems() {
         try {
             ArrayList<Item> items = new ArrayList<>();

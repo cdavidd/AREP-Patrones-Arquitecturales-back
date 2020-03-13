@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import edu.escuelaing.arep.api.model.Item;
 import edu.escuelaing.arep.api.persistence.exception.ItemException;
 
-//@Repository
+@Repository
 public interface ItemPersistence {
 
     void addItem(Item item) throws ItemException;
