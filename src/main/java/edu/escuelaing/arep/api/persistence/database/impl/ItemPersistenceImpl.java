@@ -14,7 +14,7 @@ import edu.escuelaing.arep.api.model.Item;
 import edu.escuelaing.arep.api.persistence.database.ItemPersistence;
 import edu.escuelaing.arep.api.persistence.exception.ItemException;
 
-@Repository
+//@Repository
 public class ItemPersistenceImpl implements ItemPersistence {
 
     private static String urlDB = "jdbc:postgresql://ec2-184-72-235-80.compute-1.amazonaws.com:5432/dbtl4cgci93us8";
