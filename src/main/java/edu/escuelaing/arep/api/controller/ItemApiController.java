@@ -1,10 +1,12 @@
 package edu.escuelaing.arep.api.controller;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +18,7 @@ import edu.escuelaing.arep.api.persistence.exception.ItemException;
 import edu.escuelaing.arep.api.services.ItemServices;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/items")
 public class ItemApiController {
 
@@ -23,7 +26,7 @@ public class ItemApiController {
     private ItemServices itemServices;
 
     @PostMapping
-    public ResponseEntity<?> createItem(@RequestBody Item item) {
+    public ResponseEntity<?> createItem(@RequestBody Item item) throws SQLException {
         try {
             itemServices.addItem(item);
             return new ResponseEntity<>(HttpStatus.CREATED);

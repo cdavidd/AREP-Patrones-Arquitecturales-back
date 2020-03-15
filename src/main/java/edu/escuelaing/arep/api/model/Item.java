@@ -44,4 +44,9 @@ public class Item {
         this.cantidad = cantidad;
     }
 
+    @Override
+    public String toString() {
+        return "Item{cantidad=" + cantidad + ", id=" + id + ", name=" + name + "}";
+    }
+
 }

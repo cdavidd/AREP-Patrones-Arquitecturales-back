@@ -17,9 +17,9 @@ import edu.escuelaing.arep.api.persistence.exception.ItemException;
 @Repository
 public class ItemPersistenceImpl implements ItemPersistence {
 
-    private static String urlDB = "jdbc:postgresql://database-2.c5szfzxzsbcy.us-east-1.rds.amazonaws.com:5432/arepDataBase";
+    private static String urlDB = "jdbc:postgresql://database-1.cwzwt3rieucx.us-east-1.rds.amazonaws.com:5432/tuto";
     private static String usuarioDB = "david";
-    private static String passwordDB = "123456789c";
+    private static String passwordDB = "prueba123";
     private static Connection connection = null;
 
     public ItemPersistenceImpl() {
@@ -63,16 +63,14 @@ public class ItemPersistenceImpl implements ItemPersistence {
     }
 
     @Override
-    public void addItem(Item item) throws ItemException {
-        try {
-            Statement stmt = connection.createStatement();
-            String insertItem = "INSERT INTO ITEM (id,name,cantidad) VALUES (" + item.getId() + "," + item.getName()
-                    + "," + item.getCantidad() + ")";
-            stmt.executeUpdate(insertItem);
-            stmt.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+    public void addItem(Item item) throws ItemException, SQLException {
+
+        Statement stmt = connection.createStatement();
+        String insertItem = "INSERT INTO ITEM (id,name,cantidad) VALUES (" + item.getId() + ",'" + item.getName() + "',"
+                + item.getCantidad() + ")";
+        System.out.println(insertItem);
+        stmt.executeUpdate(insertItem);
+        stmt.close();
 
     }
 

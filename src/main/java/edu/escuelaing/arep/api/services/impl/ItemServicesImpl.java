@@ -1,5 +1,6 @@
 package edu.escuelaing.arep.api.services.impl;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class ItemServicesImpl implements ItemServices {
     private ItemPersistence itemPersistence;
 
     @Override
-    public void addItem(Item item) throws ItemException {
+    public void addItem(Item item) throws ItemException, SQLException {
         itemPersistence.addItem(item);
     }
 
